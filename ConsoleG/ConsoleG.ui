@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConsoleG</class>
+ <widget class="QMainWindow" name="ConsoleG">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1204</width>
+    <height>649</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ConsoleG</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1204</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Project">
+    <property name="title">
+     <string>&amp;Project</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_Image_Sequence">
+    <property name="title">
+     <string>&amp;Image Sequence</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_Camear">
+    <property name="title">
+     <string>&amp;Camera</string>
+    </property>
+    <widget class="QMenu" name="menu_Add">
+     <property name="title">
+      <string>&amp;Add</string>
+     </property>
+     <addaction name="action_Camera_Add_ByUserPoints"/>
+    </widget>
+    <addaction name="menu_Add"/>
+   </widget>
+   <widget class="QMenu" name="menu_Target">
+    <property name="title">
+     <string>&amp;Target</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuC_urve">
+    <property name="title">
+     <string>C&amp;urve</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_Surface">
+    <property name="title">
+     <string>&amp;Surface</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_About">
+    <property name="title">
+     <string>&amp;About</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menutests">
+    <property name="title">
+     <string>tests</string>
+    </property>
+    <addaction name="action_Tests_QcustomplotBasic"/>
+   </widget>
+   <addaction name="menu_Project"/>
+   <addaction name="menu_Image_Sequence"/>
+   <addaction name="menu_Camear"/>
+   <addaction name="menu_Target"/>
+   <addaction name="menuC_urve"/>
+   <addaction name="menu_Surface"/>
+   <addaction name="menu_About"/>
+   <addaction name="menutests"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Camera_Add_ByUserPoints">
+   <property name="text">
+    <string>by &amp;user points</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="action_Tests_QcustomplotBasic">
+   <property name="text">
+    <string>QcustomplotBasic</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+T</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
