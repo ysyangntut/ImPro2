@@ -80,6 +80,19 @@ public:
     QPushButton *pbImshow1600Undistorted;
     QLabel *label_2;
     QPushButton *pbImgInteractiveUndistorted;
+    QPushButton *pbDrawMesh;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
+    QTextEdit *edMeshXs;
+    QTextEdit *edMeshYs;
+    QTextEdit *edMeshZs;
+    QLabel *label_6;
+    QTextEdit *edMarker;
+    QLabel *label_7;
+    QTextEdit *edMarkerSize;
+    QLabel *lbMeshRefinement;
+    QTextEdit *edMarkerRefinement;
 
     void setupUi(QDialog *UserPointCalibrationDialog)
     {
@@ -493,6 +506,58 @@ public:
         pbImgInteractiveUndistorted->setObjectName(QString::fromUtf8("pbImgInteractiveUndistorted"));
         pbImgInteractiveUndistorted->setGeometry(QRect(1363, 362, 131, 31));
         pbImgInteractiveUndistorted->setFont(font);
+        pbDrawMesh = new QPushButton(UserPointCalibrationDialog);
+        pbDrawMesh->setObjectName(QString::fromUtf8("pbDrawMesh"));
+        pbDrawMesh->setGeometry(QRect(1220, 401, 121, 121));
+        pbDrawMesh->setFont(font);
+        label_3 = new QLabel(UserPointCalibrationDialog);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(1355, 403, 58, 15));
+        label_3->setFont(font1);
+        label_4 = new QLabel(UserPointCalibrationDialog);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(1355, 435, 58, 15));
+        label_4->setFont(font1);
+        label_5 = new QLabel(UserPointCalibrationDialog);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(1355, 464, 58, 15));
+        label_5->setFont(font1);
+        edMeshXs = new QTextEdit(UserPointCalibrationDialog);
+        edMeshXs->setObjectName(QString::fromUtf8("edMeshXs"));
+        edMeshXs->setGeometry(QRect(1415, 398, 371, 28));
+        edMeshXs->setFont(font1);
+        edMeshYs = new QTextEdit(UserPointCalibrationDialog);
+        edMeshYs->setObjectName(QString::fromUtf8("edMeshYs"));
+        edMeshYs->setGeometry(QRect(1415, 431, 371, 28));
+        edMeshYs->setFont(font1);
+        edMeshZs = new QTextEdit(UserPointCalibrationDialog);
+        edMeshZs->setObjectName(QString::fromUtf8("edMeshZs"));
+        edMeshZs->setGeometry(QRect(1415, 462, 371, 28));
+        edMeshZs->setFont(font1);
+        label_6 = new QLabel(UserPointCalibrationDialog);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(1355, 500, 61, 16));
+        label_6->setFont(font1);
+        edMarker = new QTextEdit(UserPointCalibrationDialog);
+        edMarker->setObjectName(QString::fromUtf8("edMarker"));
+        edMarker->setGeometry(QRect(1415, 493, 41, 28));
+        edMarker->setFont(font1);
+        label_7 = new QLabel(UserPointCalibrationDialog);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(1466, 500, 91, 16));
+        label_7->setFont(font1);
+        edMarkerSize = new QTextEdit(UserPointCalibrationDialog);
+        edMarkerSize->setObjectName(QString::fromUtf8("edMarkerSize"));
+        edMarkerSize->setGeometry(QRect(1559, 494, 41, 28));
+        edMarkerSize->setFont(font1);
+        lbMeshRefinement = new QLabel(UserPointCalibrationDialog);
+        lbMeshRefinement->setObjectName(QString::fromUtf8("lbMeshRefinement"));
+        lbMeshRefinement->setGeometry(QRect(1610, 500, 91, 16));
+        lbMeshRefinement->setFont(font1);
+        edMarkerRefinement = new QTextEdit(UserPointCalibrationDialog);
+        edMarkerRefinement->setObjectName(QString::fromUtf8("edMarkerRefinement"));
+        edMarkerRefinement->setGeometry(QRect(1691, 493, 71, 28));
+        edMarkerRefinement->setFont(font1);
         QWidget::setTabOrder(cb09, edImgFile);
         QWidget::setTabOrder(edImgFile, edImgSize);
         QWidget::setTabOrder(edImgSize, edGlobalPoints);
@@ -1579,6 +1644,61 @@ public:
         pbImshow1600Undistorted->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Img Show 1600", nullptr));
         label_2->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Undistorted image", nullptr));
         pbImgInteractiveUndistorted->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Interactive view", nullptr));
+        pbDrawMesh->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Draw Mesh", nullptr));
+        label_3->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Mesh Xs", nullptr));
+        label_4->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Mesh Ys", nullptr));
+        label_5->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Mesh Zs", nullptr));
+        edMeshXs->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-300 -200 -100 0 100 200 300</p></body></html>", nullptr));
+        edMeshYs->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">0</p></body></html>", nullptr));
+        edMeshZs->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">-300 -200 -100 0 100 200 300</p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        label_6->setToolTip(QCoreApplication::translate("UserPointCalibrationDialog", "Can be \"+\", \"x\", \"o\", or \"square\"", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        label_6->setWhatsThis(QCoreApplication::translate("UserPointCalibrationDialog", "<html><head/><body><p>Can be &quot;+&quot;, &quot;x&quot;, &quot;o&quot;, or &quot;square&quot;</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        label_6->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Marker", nullptr));
+        edMarker->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">o</p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        label_7->setToolTip(QCoreApplication::translate("UserPointCalibrationDialog", "<html><head/><body><p>Can be &quot;+&quot;, &quot;x&quot;, &quot;o&quot;, or &quot;square&quot;</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        label_7->setWhatsThis(QCoreApplication::translate("UserPointCalibrationDialog", "<html><head/><body><p>Can be &quot;+&quot;, &quot;x&quot;, &quot;o&quot;, or &quot;square&quot;</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        label_7->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Marker size", nullptr));
+        edMarkerSize->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">10</p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        lbMeshRefinement->setToolTip(QCoreApplication::translate("UserPointCalibrationDialog", "<html><head/><body><p>Can be &quot;+&quot;, &quot;x&quot;, &quot;o&quot;, or &quot;square&quot;</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        lbMeshRefinement->setWhatsThis(QCoreApplication::translate("UserPointCalibrationDialog", "<html><head/><body><p>Can be &quot;+&quot;, &quot;x&quot;, &quot;o&quot;, or &quot;square&quot;</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        lbMeshRefinement->setText(QCoreApplication::translate("UserPointCalibrationDialog", "Refinement", nullptr));
+        edMarkerRefinement->setHtml(QCoreApplication::translate("UserPointCalibrationDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Consolas'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">10</p></body></html>", nullptr));
     } // retranslateUi
 
 };

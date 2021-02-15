@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UserPointCalibrationDialog_t {
-    QByteArrayData data[35];
-    char stringdata0[725];
+    QByteArrayData data[36];
+    char stringdata0[751];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -55,18 +55,19 @@ QT_MOC_LITERAL(19, 357, 24), // "on_edImgSize_textChanged"
 QT_MOC_LITERAL(20, 382, 35), // "on_tbIntrinsic_itemSelectionC..."
 QT_MOC_LITERAL(21, 418, 35), // "on_tbExtrinsic_itemSelectionC..."
 QT_MOC_LITERAL(22, 454, 36), // "on_tbProjection_itemSelection..."
-QT_MOC_LITERAL(23, 491, 22), // "on_pbUndistort_clicked"
-QT_MOC_LITERAL(24, 514, 18), // "getIntrinsicFromUi"
-QT_MOC_LITERAL(25, 533, 18), // "getExtrinsicFromUi"
-QT_MOC_LITERAL(26, 552, 25), // "getCalibrationFlagsFromUi"
-QT_MOC_LITERAL(27, 578, 20), // "displayIntrinsicToUi"
-QT_MOC_LITERAL(28, 599, 20), // "displayExtrinsicToUi"
-QT_MOC_LITERAL(29, 620, 21), // "displayProjectionToUi"
-QT_MOC_LITERAL(30, 642, 27), // "displayUndistortedImageToUi"
-QT_MOC_LITERAL(31, 670, 14), // "displayMessage"
-QT_MOC_LITERAL(32, 685, 3), // "msg"
-QT_MOC_LITERAL(33, 689, 17), // "on_pbSave_clicked"
-QT_MOC_LITERAL(34, 707, 17) // "on_pbLoad_clicked"
+QT_MOC_LITERAL(23, 491, 26), // "on_pbSaveUndistort_clicked"
+QT_MOC_LITERAL(24, 518, 18), // "getIntrinsicFromUi"
+QT_MOC_LITERAL(25, 537, 18), // "getExtrinsicFromUi"
+QT_MOC_LITERAL(26, 556, 25), // "getCalibrationFlagsFromUi"
+QT_MOC_LITERAL(27, 582, 20), // "displayIntrinsicToUi"
+QT_MOC_LITERAL(28, 603, 20), // "displayExtrinsicToUi"
+QT_MOC_LITERAL(29, 624, 21), // "displayProjectionToUi"
+QT_MOC_LITERAL(30, 646, 27), // "displayUndistortedImageToUi"
+QT_MOC_LITERAL(31, 674, 14), // "displayMessage"
+QT_MOC_LITERAL(32, 689, 3), // "msg"
+QT_MOC_LITERAL(33, 693, 17), // "on_pbSave_clicked"
+QT_MOC_LITERAL(34, 711, 17), // "on_pbLoad_clicked"
+QT_MOC_LITERAL(35, 729, 21) // "on_pbDrawMesh_clicked"
 
     },
     "UserPointCalibrationDialog\0"
@@ -84,12 +85,13 @@ QT_MOC_LITERAL(34, 707, 17) // "on_pbLoad_clicked"
     "on_tbIntrinsic_itemSelectionChanged\0"
     "on_tbExtrinsic_itemSelectionChanged\0"
     "on_tbProjection_itemSelectionChanged\0"
-    "on_pbUndistort_clicked\0getIntrinsicFromUi\0"
-    "getExtrinsicFromUi\0getCalibrationFlagsFromUi\0"
+    "on_pbSaveUndistort_clicked\0"
+    "getIntrinsicFromUi\0getExtrinsicFromUi\0"
+    "getCalibrationFlagsFromUi\0"
     "displayIntrinsicToUi\0displayExtrinsicToUi\0"
     "displayProjectionToUi\0displayUndistortedImageToUi\0"
     "displayMessage\0msg\0on_pbSave_clicked\0"
-    "on_pbLoad_clicked"
+    "on_pbLoad_clicked\0on_pbDrawMesh_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -99,7 +101,7 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      24,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -107,29 +109,30 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  129,    2, 0x08 /* Private */,
-       3,    0,  130,    2, 0x08 /* Private */,
-       4,    0,  131,    2, 0x08 /* Private */,
-       5,    6,  132,    2, 0x08 /* Private */,
-      15,    0,  145,    2, 0x08 /* Private */,
-      16,    0,  146,    2, 0x08 /* Private */,
-      17,    0,  147,    2, 0x08 /* Private */,
-      18,    0,  148,    2, 0x08 /* Private */,
-      19,    0,  149,    2, 0x08 /* Private */,
-      20,    0,  150,    2, 0x08 /* Private */,
-      21,    0,  151,    2, 0x08 /* Private */,
-      22,    0,  152,    2, 0x08 /* Private */,
-      23,    0,  153,    2, 0x08 /* Private */,
-      24,    0,  154,    2, 0x08 /* Private */,
-      25,    0,  155,    2, 0x08 /* Private */,
-      26,    0,  156,    2, 0x08 /* Private */,
-      27,    0,  157,    2, 0x08 /* Private */,
-      28,    0,  158,    2, 0x08 /* Private */,
-      29,    0,  159,    2, 0x08 /* Private */,
-      30,    0,  160,    2, 0x08 /* Private */,
-      31,    1,  161,    2, 0x08 /* Private */,
-      33,    0,  164,    2, 0x08 /* Private */,
-      34,    0,  165,    2, 0x08 /* Private */,
+       1,    0,  134,    2, 0x08 /* Private */,
+       3,    0,  135,    2, 0x08 /* Private */,
+       4,    0,  136,    2, 0x08 /* Private */,
+       5,    6,  137,    2, 0x08 /* Private */,
+      15,    0,  150,    2, 0x08 /* Private */,
+      16,    0,  151,    2, 0x08 /* Private */,
+      17,    0,  152,    2, 0x08 /* Private */,
+      18,    0,  153,    2, 0x08 /* Private */,
+      19,    0,  154,    2, 0x08 /* Private */,
+      20,    0,  155,    2, 0x08 /* Private */,
+      21,    0,  156,    2, 0x08 /* Private */,
+      22,    0,  157,    2, 0x08 /* Private */,
+      23,    0,  158,    2, 0x08 /* Private */,
+      24,    0,  159,    2, 0x08 /* Private */,
+      25,    0,  160,    2, 0x08 /* Private */,
+      26,    0,  161,    2, 0x08 /* Private */,
+      27,    0,  162,    2, 0x08 /* Private */,
+      28,    0,  163,    2, 0x08 /* Private */,
+      29,    0,  164,    2, 0x08 /* Private */,
+      30,    0,  165,    2, 0x08 /* Private */,
+      31,    1,  166,    2, 0x08 /* Private */,
+      33,    0,  169,    2, 0x08 /* Private */,
+      34,    0,  170,    2, 0x08 /* Private */,
+      35,    0,  171,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -155,6 +158,7 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
     QMetaType::Void, QMetaType::QString,   32,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -177,7 +181,7 @@ void UserPointCalibrationDialog::qt_static_metacall(QObject *_o, QMetaObject::Ca
         case 9: _t->on_tbIntrinsic_itemSelectionChanged(); break;
         case 10: _t->on_tbExtrinsic_itemSelectionChanged(); break;
         case 11: _t->on_tbProjection_itemSelectionChanged(); break;
-        case 12: _t->on_pbUndistort_clicked(); break;
+        case 12: _t->on_pbSaveUndistort_clicked(); break;
         case 13: _t->getIntrinsicFromUi(); break;
         case 14: _t->getExtrinsicFromUi(); break;
         case 15: _t->getCalibrationFlagsFromUi(); break;
@@ -188,6 +192,7 @@ void UserPointCalibrationDialog::qt_static_metacall(QObject *_o, QMetaObject::Ca
         case 20: _t->displayMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 21: _t->on_pbSave_clicked(); break;
         case 22: _t->on_pbLoad_clicked(); break;
+        case 23: _t->on_pbDrawMesh_clicked(); break;
         default: ;
         }
     }
@@ -222,13 +227,13 @@ int UserPointCalibrationDialog::qt_metacall(QMetaObject::Call _c, int _id, void 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 24;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 24)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 23;
+        _id -= 24;
     }
     return _id;
 }

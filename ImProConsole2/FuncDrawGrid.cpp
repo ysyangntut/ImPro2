@@ -7,6 +7,7 @@
 
 #include "IntrinsicCalibrator.h"
 #include "impro_util.h"
+#include "improDraw.h"
 
 using namespace std;
 

@@ -253,10 +253,6 @@ int VecValid(const std::vector<T> & oldVec,
 	return 0;
 }
 
-int paintMarkersOnPointsInImage(
-	const cv::Mat & inImg, cv::Mat & outImg,
-	const std::vector<cv::Point2f> & points,
-	int draw_type, int mark_size); 
 
 
 //! interpQ4() generates refined points within a quadrangle defined by four given points.
@@ -295,27 +291,7 @@ std::vector<std::string> readStringsFromStringLine(std::string);
 // try all fourcc for video writer
 int preferredFourcc(); 
 
-//! draw points on image
-/*!
-\param img the image to be drawn
-\param points points positions in format of Mat(N,2,Point2f)
-\param symbol symbol of markers, can be "+", "x", "o", "square"
-\param size the size of the markers (in pixels)
-\param thickness the thickness of markers (in pixels)
-\param color cv::Scalar(blue,green,red)
-\param alpha alpha of markers (0:invisible, 1:opaque)
-\param putText put index near the point (<0 for not putting any index, >= 0 to be the first index)
-\param shift shift for subpixel drawing
-*/
-int drawPointsOnImage(cv::Mat & img, cv::Mat points, std::string symbol = std::string("o"),
-	int size = 8, int thickness = 1, 
-	cv::Scalar color = cv::Scalar(0, 255, 0),
-	float alpha = 0.5f, int putText = -1, int shift = 3); 
 
-int drawPointOnImage(cv::Mat & img, cv::Point2f point, std::string symbol = std::string("o"),
-	int size = 8, int thickness = 1,
-	cv::Scalar color = cv::Scalar(0, 255, 0),
-	float alpha = 0.5f, int putText = -1, int shift = 3);
 
 const unsigned char jet_bgr[256][3] = { {131,0,0},{135,0,0},{139,0,0},{143,0,0},{147,0,0},{151,0,0},{155,0,0},{159,0,0},
 {163,0,0},{167,0,0},{171,0,0},{175,0,0},{179,0,0},{183,0,0},{187,0,0},{191,0,0},{195,0,0},{199,0,0},{203,0,0},{207,0,0},

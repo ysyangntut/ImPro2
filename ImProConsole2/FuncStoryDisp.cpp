@@ -8,6 +8,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "impro_util.h"
+#include "improDraw.h"
 #include "trackings.h"
 
 using namespace std;

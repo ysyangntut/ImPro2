@@ -10,6 +10,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "impro_util.h"
+#include "improDraw.h"
 #include "FileSeq.h"
 
 using namespace std;

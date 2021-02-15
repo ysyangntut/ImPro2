@@ -102,6 +102,7 @@ SOURCES       = ..\ImProConsole2\CamMoveCorrector.cpp \
 		..\ImProConsole2\estimateStoryDispV4.cpp \
 		..\ImProConsole2\generalConstrained3dPosition_newton.cpp \
 		..\ImProConsole2\improCalib.cpp \
+		..\ImProConsole2\improDraw.cpp \
 		..\ImProConsole2\improEdgeEnhancement.cpp \
 		..\ImProConsole2\improFileIO.cpp \
 		..\ImProConsole2\improMath.cpp \
@@ -169,6 +170,7 @@ OBJECTS       = release\CamMoveCorrector.obj \
 		release\estimateStoryDispV4.obj \
 		release\generalConstrained3dPosition_newton.obj \
 		release\improCalib.obj \
+		release\improDraw.obj \
 		release\improEdgeEnhancement.obj \
 		release\improFileIO.obj \
 		release\improMath.obj \
@@ -197,6 +199,7 @@ DIST          = ImProConsole2.pro.user CamMoveCorrector.h \
 		Submenu.h \
 		enhancedCorrelationWithReference.h \
 		improCalib.h \
+		improDraw.h \
 		improEdgeEnhancement.h \
 		improFileIO.h \
 		improMath.h \
@@ -262,6 +265,7 @@ DIST          = ImProConsole2.pro.user CamMoveCorrector.h \
 		..\ImProConsole2\estimateStoryDispV4.cpp \
 		..\ImProConsole2\generalConstrained3dPosition_newton.cpp \
 		..\ImProConsole2\improCalib.cpp \
+		..\ImProConsole2\improDraw.cpp \
 		..\ImProConsole2\improEdgeEnhancement.cpp \
 		..\ImProConsole2\improFileIO.cpp \
 		..\ImProConsole2\improMath.cpp \
@@ -334,7 +338,8 @@ all: Makefile.Release  release\ImProConsole2.exe
 release\ImProConsole2.exe:  $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
 release\CamMoveCorrector.obj release\FileSeq.obj release\FuncCalibInLabOnSite.obj release\FuncCalibOnSiteUserPoints.obj release\FuncCalibOnlyExtrinsic.obj release\FuncCalibStereoOnSite.obj release\FuncCamMoveCorrelation.obj release\FuncConstraintOnPolySurface.obj release\FuncDrawGrid.obj release\FuncDrawHouse.obj release\FuncDrawRotatingTemplate.obj release\FuncImshowOnline.obj release\FuncMandelbrot.obj release\FuncOptflowSeq.obj release\FuncPip.obj release\FuncQ4TemplatesPicking.obj release\FuncSingleCamWallMonitoring.obj release\FuncStoryDisp.obj release\FuncStoryDispV2.obj release\FuncStoryDispV3.obj release\FuncStoryDispV4.obj release\FuncStoryDispV6.obj release\FuncStoryDispV7.obj release\FuncStoryDispV8.obj release\FuncSyncTwoCams.obj release\FuncTemplatesPicking.obj release\FuncTestPlotCamRotNewDisp.obj release\FuncTrackingPointsEcc.obj release\FuncTrackingPyrTmpltMatch.obj release\FuncTriangulationAllSteps.obj release\FuncTryCamFocusExposure.obj release\FuncUndistortOnline.obj
-release\FuncVidImPointsQ4.obj release\FuncVidOptflowToVelocity.obj release\FuncVideo2Pics.obj release\FuncVideoDenceTracking.obj release\FuncWallDisp.obj release\FuncWallDispCam.obj release\FuncWallSingleCam.obj release\ImagePointsPicker.obj release\ImageSequence.obj release\IntrinsicCalibrator.obj release\IoData.obj release\Points2fHistoryData.obj release\Points3dHistoryData.obj release\RollingPlot.obj release\Submenu.obj release\enhancedCorrelationWithReference.obj release\estimateStoryDisp.obj release\estimateStoryDispV4.obj release\generalConstrained3dPosition_newton.obj release\improCalib.obj release\improEdgeEnhancement.obj release\improFileIO.obj release\improMath.obj release\improStrings.obj release\improTargetTracking.obj release\impro_util.obj release\main.obj release\matchTemplateWithRot.obj release\matchTemplateWithRotPyr.obj release\pickAPoint.obj release\smoothZoomAndShow.obj release\sync.obj release\trackings.obj release\triangulatePoints2.obj release\uigetfile.obj
+release\FuncVidImPointsQ4.obj release\FuncVidOptflowToVelocity.obj release\FuncVideo2Pics.obj release\FuncVideoDenceTracking.obj release\FuncWallDisp.obj release\FuncWallDispCam.obj release\FuncWallSingleCam.obj release\ImagePointsPicker.obj release\ImageSequence.obj release\IntrinsicCalibrator.obj release\IoData.obj release\Points2fHistoryData.obj release\Points3dHistoryData.obj release\RollingPlot.obj release\Submenu.obj release\enhancedCorrelationWithReference.obj release\estimateStoryDisp.obj release\estimateStoryDispV4.obj release\generalConstrained3dPosition_newton.obj release\improCalib.obj release\improDraw.obj release\improEdgeEnhancement.obj release\improFileIO.obj release\improMath.obj release\improStrings.obj release\improTargetTracking.obj release\impro_util.obj release\main.obj release\matchTemplateWithRot.obj release\matchTemplateWithRotPyr.obj release\pickAPoint.obj release\smoothZoomAndShow.obj release\sync.obj release\trackings.obj release\triangulatePoints2.obj
+release\uigetfile.obj
 $(LIBS)
 <<
 
@@ -347,7 +352,7 @@ dist:
 	$(ZIP) ImProConsole2.zip $(SOURCES) $(DIST) ..\ImProConsole2\ImProConsole2.pro C:\Qt\5.15.0\msvc2019_64\mkspecs\features\spec_pre.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\common\angle.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\common\windows-desktop.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\common\msvc-desktop.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\qconfig.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3drender.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3drender_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webengine.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webengine_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webenginecore.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webenginecore_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webenginecoreheaders_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webenginewidgets_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webview.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_webview_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.15.0\msvc2019_64\mkspecs\features\qt_functions.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\qt_config.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\win32-msvc\qmake.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.15.0\msvc2019_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\common\msvc-version.conf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\toolchain.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\default_pre.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\resolve_config.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\default_post.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\build_pass.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\win32\console.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\qtquickcompiler.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\precompile_header.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\warn_on.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\qmake_use.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\file_copies.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\testcase_targets.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\exceptions.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\yacc.prf C:\Qt\5.15.0\msvc2019_64\mkspecs\features\lex.prf ..\ImProConsole2\ImProConsole2.pro      
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\CamMoveCorrector.obj release\FileSeq.obj release\FuncCalibInLabOnSite.obj release\FuncCalibOnSiteUserPoints.obj release\FuncCalibOnlyExtrinsic.obj release\FuncCalibStereoOnSite.obj release\FuncCamMoveCorrelation.obj release\FuncConstraintOnPolySurface.obj release\FuncDrawGrid.obj release\FuncDrawHouse.obj release\FuncDrawRotatingTemplate.obj release\FuncImshowOnline.obj release\FuncMandelbrot.obj release\FuncOptflowSeq.obj release\FuncPip.obj release\FuncQ4TemplatesPicking.obj release\FuncSingleCamWallMonitoring.obj release\FuncStoryDisp.obj release\FuncStoryDispV2.obj release\FuncStoryDispV3.obj release\FuncStoryDispV4.obj release\FuncStoryDispV6.obj release\FuncStoryDispV7.obj release\FuncStoryDispV8.obj release\FuncSyncTwoCams.obj release\FuncTemplatesPicking.obj release\FuncTestPlotCamRotNewDisp.obj release\FuncTrackingPointsEcc.obj release\FuncTrackingPyrTmpltMatch.obj release\FuncTriangulationAllSteps.obj release\FuncTryCamFocusExposure.obj release\FuncUndistortOnline.obj release\FuncVidImPointsQ4.obj release\FuncVidOptflowToVelocity.obj release\FuncVideo2Pics.obj release\FuncVideoDenceTracking.obj release\FuncWallDisp.obj release\FuncWallDispCam.obj release\FuncWallSingleCam.obj release\ImagePointsPicker.obj release\ImageSequence.obj release\IntrinsicCalibrator.obj release\IoData.obj release\Points2fHistoryData.obj release\Points3dHistoryData.obj release\RollingPlot.obj release\Submenu.obj release\enhancedCorrelationWithReference.obj release\estimateStoryDisp.obj release\estimateStoryDispV4.obj release\generalConstrained3dPosition_newton.obj release\improCalib.obj release\improEdgeEnhancement.obj release\improFileIO.obj release\improMath.obj release\improStrings.obj release\improTargetTracking.obj release\impro_util.obj release\main.obj release\matchTemplateWithRot.obj release\matchTemplateWithRotPyr.obj release\pickAPoint.obj release\smoothZoomAndShow.obj release\sync.obj release\trackings.obj release\triangulatePoints2.obj release\uigetfile.obj
+	-$(DEL_FILE) release\CamMoveCorrector.obj release\FileSeq.obj release\FuncCalibInLabOnSite.obj release\FuncCalibOnSiteUserPoints.obj release\FuncCalibOnlyExtrinsic.obj release\FuncCalibStereoOnSite.obj release\FuncCamMoveCorrelation.obj release\FuncConstraintOnPolySurface.obj release\FuncDrawGrid.obj release\FuncDrawHouse.obj release\FuncDrawRotatingTemplate.obj release\FuncImshowOnline.obj release\FuncMandelbrot.obj release\FuncOptflowSeq.obj release\FuncPip.obj release\FuncQ4TemplatesPicking.obj release\FuncSingleCamWallMonitoring.obj release\FuncStoryDisp.obj release\FuncStoryDispV2.obj release\FuncStoryDispV3.obj release\FuncStoryDispV4.obj release\FuncStoryDispV6.obj release\FuncStoryDispV7.obj release\FuncStoryDispV8.obj release\FuncSyncTwoCams.obj release\FuncTemplatesPicking.obj release\FuncTestPlotCamRotNewDisp.obj release\FuncTrackingPointsEcc.obj release\FuncTrackingPyrTmpltMatch.obj release\FuncTriangulationAllSteps.obj release\FuncTryCamFocusExposure.obj release\FuncUndistortOnline.obj release\FuncVidImPointsQ4.obj release\FuncVidOptflowToVelocity.obj release\FuncVideo2Pics.obj release\FuncVideoDenceTracking.obj release\FuncWallDisp.obj release\FuncWallDispCam.obj release\FuncWallSingleCam.obj release\ImagePointsPicker.obj release\ImageSequence.obj release\IntrinsicCalibrator.obj release\IoData.obj release\Points2fHistoryData.obj release\Points3dHistoryData.obj release\RollingPlot.obj release\Submenu.obj release\enhancedCorrelationWithReference.obj release\estimateStoryDisp.obj release\estimateStoryDispV4.obj release\generalConstrained3dPosition_newton.obj release\improCalib.obj release\improDraw.obj release\improEdgeEnhancement.obj release\improFileIO.obj release\improMath.obj release\improStrings.obj release\improTargetTracking.obj release\impro_util.obj release\main.obj release\matchTemplateWithRot.obj release\matchTemplateWithRotPyr.obj release\pickAPoint.obj release\smoothZoomAndShow.obj release\sync.obj release\trackings.obj release\triangulatePoints2.obj release\uigetfile.obj
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -3723,7 +3728,8 @@ release\FuncUndistortOnline.obj: ..\ImProConsole2\FuncUndistortOnline.cpp C:\ope
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\background_segm.hpp \
 		..\ImProConsole2\impro_util.h \
 		..\ImProConsole2\impro_fileIO.h \
-		..\ImProConsole2\FileSeq.h
+		..\ImProConsole2\FileSeq.h \
+		..\ImProConsole2\improStrings.h
 
 release\FuncVidImPointsQ4.obj: ..\ImProConsole2\FuncVidImPointsQ4.cpp C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv_modules.hpp \
@@ -5647,6 +5653,109 @@ release\improCalib.obj: ..\ImProConsole2\improCalib.cpp C:\opencv\opencv451x\ope
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\background_segm.hpp \
 		..\ImProConsole2\improCalib.h
 
+release\improDraw.obj: ..\ImProConsole2\improDraw.cpp C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv_modules.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cvdef.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\hal\interface.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cv_cpu_dispatch.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cv_cpu_helper.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\hal\msa_macros.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\fast_math.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\version.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\base.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cvstd.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cvstd_wrapper.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\neon_utils.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\vsx_utils.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\check.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\traits.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\matx.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\saturate.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\types.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\mat.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\bufferpool.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\mat.inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\persistence.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\operations.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cvstd.inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\utility.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\utils\instrumentation.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\utils\tls.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\optim.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\ovx.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\calib3d.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\features2d.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\miniflann.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\defines.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\config.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\affine.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\dnn.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\async.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\version.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\dict.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\layer.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\dnn.inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\dnn\utils\inference_engine.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\flann_base.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\general.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\matrix.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\params.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\any.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\saving.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\nn_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\result_set.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\all_indices.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\kdtree_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\dynamic_bitset.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\dist.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\heap.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\allocator.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\random.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\kdtree_single_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\kmeans_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\logger.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\composite_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\linear_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\hierarchical_clustering_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\lsh_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\lsh_table.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\autotuned_index.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\ground_truth.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\index_testing.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\timer.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\flann\sampling.h \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\highgui.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\imgcodecs.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\videoio.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\imgproc.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\ml.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\ml\ml.inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\objdetect.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\objdetect\detection_based_tracker.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\photo.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\warpers.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\warpers.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cuda.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cuda_types.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\cuda.inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\warpers_inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\matchers.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\motion_estimators.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\util.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\util_inl.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\camera.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\exposure_compensate.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\seam_finders.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\blenders.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\tracking.hpp \
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\background_segm.hpp \
+		..\ImProConsole2\improDraw.h
+
 release\improEdgeEnhancement.obj: ..\ImProConsole2\improEdgeEnhancement.cpp ..\ImProConsole2\improEdgeEnhancement.h \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\opencv_modules.hpp \
@@ -6068,9 +6177,11 @@ release\main.obj: ..\ImProConsole2\main.cpp C:\opencv\opencv451x\opencv-4.5.1\bu
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\tracking.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\video\background_segm.hpp \
+		..\ImProConsole2\improStrings.h \
 		..\ImProConsole2\Submenu.h \
 		..\ImProConsole2\impro_util.h \
-		..\ImProConsole2\CamMoveCorrector.h
+		..\ImProConsole2\CamMoveCorrector.h \
+		..\ImProConsole2\improDraw.h
 
 release\matchTemplateWithRot.obj: ..\ImProConsole2\matchTemplateWithRot.cpp ..\ImProConsole2\matchTemplateWithRot.h \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\core.hpp \
@@ -6334,7 +6445,8 @@ release\pickAPoint.obj: ..\ImProConsole2\pickAPoint.cpp C:\opencv\opencv451x\ope
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\camera.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\exposure_compensate.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\seam_finders.hpp \
-		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\blenders.hpp
+		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\stitching\detail\blenders.hpp \
+		..\ImProConsole2\improDraw.h
 
 release\smoothZoomAndShow.obj: ..\ImProConsole2\smoothZoomAndShow.cpp C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core\core.hpp \
 		C:\opencv\opencv451x\opencv-4.5.1\build\install\include\opencv2\core.hpp \

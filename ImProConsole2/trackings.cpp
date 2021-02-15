@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include "matchTemplateWithRotPyr.h"
 #include "impro_util.h"
+#include "improDraw.h"
 
 using namespace std;
 

@@ -24,6 +24,7 @@
 
 #include "pickAPoint.h"
 #include "impro_util.h"
+#include "improDraw.h"
 #include "improStrings.h"
 #include "improCalib.h"
 
@@ -1147,11 +1148,73 @@ void UserPointCalibrationDialog::on_pbLoad_clicked()
 
 }
 
+void fromStringToVecFloatAcceptNaIgnoreOthers(
+        std::string text,
+        std::vector<float> & vecFloats,
+        int & nFloats, int & nNanfs);
+
 void UserPointCalibrationDialog::on_pbDrawMesh_clicked()
 {
+    string text;
+    int nFloats, nNanfs;
+    vector<float> xs, ys, zs;
+    string marker;
+    int markerSize, refinement;
 
-
+    // check this->imgUndistort
+    if (this->imgUndistort.cols <= 0 || this->imgUndistort.rows <= 0)
+    {
+        QMessageBox mbox;
+        mbox.setText("Warning: There is no undistorted image. Nothing to plot on.");
+        mbox.exec();
+        return;
+    }
 
     // get parameters from Ui
+    // get xs, ys, zs. For example, from "-2 -1 0 1 2" to vector<float>{-2,-1,0,1,2}
+    text = this->ui->edMeshXs->toPlainText().toStdString();
+    fromStringToVecFloatAcceptNaIgnoreOthers(text, xs, nFloats, nNanfs);
+    text = this->ui->edMeshYs->toPlainText().toStdString();
+    fromStringToVecFloatAcceptNaIgnoreOthers(text, ys, nFloats, nNanfs);
+    text = this->ui->edMeshZs->toPlainText().toStdString();
+    fromStringToVecFloatAcceptNaIgnoreOthers(text, zs, nFloats, nNanfs);
+    // get marker (Can be "+", "x", "o", or "square")
+    marker = this->ui->edMarker->toPlainText().toStdString();
+    if (marker.compare("O") == 0 || marker.compare("0") || marker.compare("o"))
+        marker = "o";
+    else if (marker.compare("X") == 0 || marker.compare("x"))
+        marker = "x";
+    else if (marker.compare("+") == 0 || marker.compare("++"))
+        marker = "+";
+    else if (marker.compare("square") == 0 || marker.compare("SQUARE"))
+        marker = "square";
+    else
+        marker = "o";
+    // get marker size
+    markerSize = this->ui->edMarkerSize->toPlainText().toInt();
+    if (markerSize <= 0) markerSize = 3;
+    // get marker refinement
+    refinement = this->ui->edMarkerRefinement->toPlainText().toInt();
+    if (refinement <= 0 || refinement >= 100) refinement = 100;
+
+    // draw mesh on undistorted image
+    int thickness = 1;
+    cv::Scalar color(20, 255, 20);
+    float alpha = 1.0;
+    cv::Mat zeroDistortion = cv::Mat::zeros(this->dvec.rows, this->dvec.cols, CV_64F);
+    drawMesh(this->imgUndistort,
+             xs, ys, zs,
+             this->cmat, zeroDistortion, this->rvec, this->tvec,
+             marker, markerSize, thickness, color, alpha, refinement);
+
+    // display
+    // display undistorted image in ui
+    int wLabel = this->ui->lbImgUndistorted->width();
+    int hLabel = this->ui->lbImgUndistorted->height();
+    QImage qimg;
+    qimg = opencvMatToQImage(this->imgUndistort);
+    QPixmap qpixmap = QPixmap::fromImage(qimg).scaled(wLabel, hLabel,
+                      Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    this->ui->lbImgUndistorted->setPixmap(qpixmap);
 
 }

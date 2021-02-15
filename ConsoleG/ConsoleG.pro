@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ../ImProConsole2/improDraw.cpp \
     ../ImProConsole2/uigetfile.cpp \
     main.cpp \
     ConsoleG.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
 
 
 HEADERS += \
+    ../ImProConsole2/improDraw.h \
     ../ImProConsole2/uigetfile.h \
     ConsoleG.h \
     qcustomplot.h \

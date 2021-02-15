@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UserPointCalibrationDialog_t {
-    QByteArrayData data[35];
-    char stringdata0[729];
+    QByteArrayData data[36];
+    char stringdata0[751];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -66,7 +66,8 @@ QT_MOC_LITERAL(30, 646, 27), // "displayUndistortedImageToUi"
 QT_MOC_LITERAL(31, 674, 14), // "displayMessage"
 QT_MOC_LITERAL(32, 689, 3), // "msg"
 QT_MOC_LITERAL(33, 693, 17), // "on_pbSave_clicked"
-QT_MOC_LITERAL(34, 711, 17) // "on_pbLoad_clicked"
+QT_MOC_LITERAL(34, 711, 17), // "on_pbLoad_clicked"
+QT_MOC_LITERAL(35, 729, 21) // "on_pbDrawMesh_clicked"
 
     },
     "UserPointCalibrationDialog\0"
@@ -90,7 +91,7 @@ QT_MOC_LITERAL(34, 711, 17) // "on_pbLoad_clicked"
     "displayIntrinsicToUi\0displayExtrinsicToUi\0"
     "displayProjectionToUi\0displayUndistortedImageToUi\0"
     "displayMessage\0msg\0on_pbSave_clicked\0"
-    "on_pbLoad_clicked"
+    "on_pbLoad_clicked\0on_pbDrawMesh_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -100,7 +101,7 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
+      24,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -108,29 +109,30 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  129,    2, 0x08 /* Private */,
-       3,    0,  130,    2, 0x08 /* Private */,
-       4,    0,  131,    2, 0x08 /* Private */,
-       5,    6,  132,    2, 0x08 /* Private */,
-      15,    0,  145,    2, 0x08 /* Private */,
-      16,    0,  146,    2, 0x08 /* Private */,
-      17,    0,  147,    2, 0x08 /* Private */,
-      18,    0,  148,    2, 0x08 /* Private */,
-      19,    0,  149,    2, 0x08 /* Private */,
-      20,    0,  150,    2, 0x08 /* Private */,
-      21,    0,  151,    2, 0x08 /* Private */,
-      22,    0,  152,    2, 0x08 /* Private */,
-      23,    0,  153,    2, 0x08 /* Private */,
-      24,    0,  154,    2, 0x08 /* Private */,
-      25,    0,  155,    2, 0x08 /* Private */,
-      26,    0,  156,    2, 0x08 /* Private */,
-      27,    0,  157,    2, 0x08 /* Private */,
-      28,    0,  158,    2, 0x08 /* Private */,
-      29,    0,  159,    2, 0x08 /* Private */,
-      30,    0,  160,    2, 0x08 /* Private */,
-      31,    1,  161,    2, 0x08 /* Private */,
-      33,    0,  164,    2, 0x08 /* Private */,
-      34,    0,  165,    2, 0x08 /* Private */,
+       1,    0,  134,    2, 0x08 /* Private */,
+       3,    0,  135,    2, 0x08 /* Private */,
+       4,    0,  136,    2, 0x08 /* Private */,
+       5,    6,  137,    2, 0x08 /* Private */,
+      15,    0,  150,    2, 0x08 /* Private */,
+      16,    0,  151,    2, 0x08 /* Private */,
+      17,    0,  152,    2, 0x08 /* Private */,
+      18,    0,  153,    2, 0x08 /* Private */,
+      19,    0,  154,    2, 0x08 /* Private */,
+      20,    0,  155,    2, 0x08 /* Private */,
+      21,    0,  156,    2, 0x08 /* Private */,
+      22,    0,  157,    2, 0x08 /* Private */,
+      23,    0,  158,    2, 0x08 /* Private */,
+      24,    0,  159,    2, 0x08 /* Private */,
+      25,    0,  160,    2, 0x08 /* Private */,
+      26,    0,  161,    2, 0x08 /* Private */,
+      27,    0,  162,    2, 0x08 /* Private */,
+      28,    0,  163,    2, 0x08 /* Private */,
+      29,    0,  164,    2, 0x08 /* Private */,
+      30,    0,  165,    2, 0x08 /* Private */,
+      31,    1,  166,    2, 0x08 /* Private */,
+      33,    0,  169,    2, 0x08 /* Private */,
+      34,    0,  170,    2, 0x08 /* Private */,
+      35,    0,  171,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -154,6 +156,7 @@ static const uint qt_meta_data_UserPointCalibrationDialog[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   32,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -189,6 +192,7 @@ void UserPointCalibrationDialog::qt_static_metacall(QObject *_o, QMetaObject::Ca
         case 20: _t->displayMessage((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 21: _t->on_pbSave_clicked(); break;
         case 22: _t->on_pbLoad_clicked(); break;
+        case 23: _t->on_pbDrawMesh_clicked(); break;
         default: ;
         }
     }
@@ -223,13 +227,13 @@ int UserPointCalibrationDialog::qt_metacall(QMetaObject::Call _c, int _id, void 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 24;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 24)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 23;
+        _id -= 24;
     }
     return _id;
 }

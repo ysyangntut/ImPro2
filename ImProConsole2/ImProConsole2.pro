@@ -56,6 +56,7 @@ SOURCES += \
         estimateStoryDispV4.cpp \
         generalConstrained3dPosition_newton.cpp \
         improCalib.cpp \
+        improDraw.cpp \
         improEdgeEnhancement.cpp \
         improFileIO.cpp \
         improMath.cpp \
@@ -88,6 +89,7 @@ HEADERS += \
     Submenu.h \
     enhancedCorrelationWithReference.h \
     improCalib.h \
+    improDraw.h \
     improEdgeEnhancement.h \
     improFileIO.h \
     improMath.h \

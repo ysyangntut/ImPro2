@@ -77,6 +77,8 @@ using namespace cv;
 
 int q4MembraneStrains_test();
 
+#include "improDraw.h"
+
 int main(int argc, char ** argv)
 {
 //    std::string onlyFilename = "123456789012345678901234567890";

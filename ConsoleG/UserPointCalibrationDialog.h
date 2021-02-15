@@ -84,6 +84,8 @@ private slots:
 
     void on_pbLoad_clicked();
 
+    void on_pbDrawMesh_clicked();
+
 private:
     Ui::UserPointCalibrationDialog *ui;
 };
